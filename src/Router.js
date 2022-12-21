@@ -5,12 +5,12 @@ import LoginC from './pages/chaeyeon/Login/Login';
 import MainC from './pages/chaeyeon/Main/Main';
 import LoginJ from './pages/jeongeun/Login/Login';
 import MainJ from './pages/jeongeun/Main/Main';
-import LoginP from './pages/jeongeun/Login/Login';
-import MainP from './pages/jeongeun/Main/Main';
-import LoginS from './pages/jeongeun/Login/Login';
-import MainS from './pages/jeongeun/Main/Main';
-import LoginW from './pages/jeongeun/Login/Login';
-import MainW from './pages/jeongeun/Main/Main';
+import LoginP from './pages/pyeongan/Login/Login';
+import MainP from './pages/pyeongan/Main/Main';
+import LoginS from './pages/seonyong/Login/Login';
+import MainS from './pages/seonyong/Main/Main';
+import LoginW from './pages/woosung/Login/Login';
+import MainW from './pages/woosung/Main/Main';
 
 export default function Router() {
   return (
