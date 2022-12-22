@@ -1,5 +1,5 @@
-import React from "react";
-import "../Main.scss";
+import React from 'react';
+import '../Main.scss';
 
 export default function main() {
   return (
@@ -9,7 +9,7 @@ export default function main() {
           <img
             className="rightprofileimg"
             alt="wecode logo"
-            src="./images/wecode.jpeg"
+            src="./images/pyeongan/wecode.jpeg"
           />
           <span className="rightprofileid">wecode_WECODE</span>
           <span className="rightprofilenickname">위코드</span>

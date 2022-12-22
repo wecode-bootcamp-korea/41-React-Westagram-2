@@ -1,15 +1,15 @@
-import React from "react";
-import "../Main.scss";
-import { useState } from "react";
+import React from 'react';
+import '../Main.scss';
+import { useState } from 'react';
 
 export default function MainLayout() {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
-  const onChange = (e) => {
+  const onChange = e => {
     setComment(e.target.value);
   };
 
-  const addComment = (e) => {
+  const addComment = e => {
     return <li>{e}</li>;
   };
   // {cm.map(item) => <li>{item}</li>}
@@ -97,7 +97,7 @@ export default function MainLayout() {
                 <button
                   id="btn"
                   onClick={() => {
-                    comment ? addComment(comment) : alert("다시");
+                    comment ? addComment(comment) : alert('다시');
                   }}
                   type="button"
                 >

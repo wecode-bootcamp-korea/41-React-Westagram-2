@@ -1,1 +1,19 @@
-$black: #FFFFFF;
+$black: #ffffff;
+
+$font16: font-size 16px;
+
+$font14: font-size 14px;
+
+$font12: font-size 12px;
+
+$fafafa: #fafafa;
+
+$rgb219: rgb(219, 219, 219);
+
+$ffffff: #ffffff;
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
