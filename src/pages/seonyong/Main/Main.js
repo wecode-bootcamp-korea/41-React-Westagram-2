@@ -1,5 +1,19 @@
-import React from 'react';
+import React from "react";
+import Nav from "/Users/hwangseon-yong/Desktop/team2/first-project/src/components/Nav/Nav";
+import Article from "../Main/Components/Article";
+import Aside from "../Main/Components/Aside";
+import "./Main.scss";
 
 export default function MainS() {
-  return <></>;
+  return (
+    <>
+      <Nav />
+      <main>
+        <div className="feeds">
+          <Article />
+        </div>
+        <Aside />
+      </main>
+    </>
+  );
 }

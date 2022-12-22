@@ -1,3 +1,66 @@
-h1 {
-  color: black;
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.login_contents {
+  @include flex(center, center);
+  margin: 0px 0px 10px 0px;
+  padding: 10px 0px 0px 0px;
+  background: #ffff;
+
+  .contents_box {
+    @include flex(space-evenly, center);
+    flex-direction: column;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    width: 250px;
+    height: 300px;
+
+    .title {
+      font-family: Lobster;
+      font-size: 30px;
+      font-weight: lighter;
+    }
+
+    .login_container {
+      @include flex(center, center);
+      flex-direction: column;
+      width: 250px;
+      height: 200px;
+
+      #user_id {
+        background: #fafafa;
+        border-radius: 5px;
+        border: 1px solid #dbdbdb;
+        width: 200px;
+        height: 24px;
+        font-size: 12px;
+      }
+
+      #user_pw {
+        background: #fafafa;
+        border-radius: 5px;
+        border: 1px solid #dbdbdb;
+        width: 200px;
+        height: 24px;
+        font-size: 12px;
+      }
+
+      .login_button {
+        background-color: #bae0fd;
+        border-radius: 5px;
+        border: 1px none;
+        width: 208px;
+        height: 30px;
+        font-size: 13px;
+        color: #ffff;
+      }
+    }
+    .bottom_word {
+      font-size: 10px;
+      color: #0a3efe;
+    }
+  }
 }
