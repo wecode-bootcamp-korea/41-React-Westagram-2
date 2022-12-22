@@ -17,13 +17,13 @@ export default function MainJ() {
         <input className="search" type="text" placeholder="검색" />
         <div className="icon">
           <div className="icon1">
-            <FontAwesomeIcon icon="fa-regular fa-compass" />
+            <FontAwesomeIcon icon="fa-compass" />
           </div>
           <div className="icon2">
-            <FontAwesomeIcon icon="fa-regular fa-heart" />
+            <FontAwesomeIcon icon="fa-heart" />
           </div>
           <div className="icon3">
-            <FontAwesomeIcon icon="fa-regular fa-user" />
+            <FontAwesomeIcon icon="fa-user" />
           </div>
         </div>
       </nav>
