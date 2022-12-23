@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "/Users/hwangseon-yong/Desktop/team2/first-project/src/components/Nav/Nav";
+import Nav from "../../../components/Nav/Nav";
 import Article from "../Main/Components/Article";
 import Aside from "../Main/Components/Aside";
 import "./Main.scss";
