@@ -1,15 +1,18 @@
 import React from 'react';
 
+interface Comments
+
 const Comments = props => {
   console.log(props);
   return (
-    <div>
-      <span className="userName">
+    <>
+      <span>
         <strong>{props.id}User</strong>
       </span>
       <span></span>
       <span>{props.text}</span>
-    </div>
+      <button className="removeBtn">X</button>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const MainJ = () => {
 
   const [commentArray, setCommentArray] = useState([]);
   const commentElement = commentArray.map((comment, index) => (
-    <li key={index}>
+    <li className="newComment" key={index}>
       <Comments id={comment.id} text={comment} />
     </li>
   ));
@@ -29,6 +29,9 @@ const MainJ = () => {
       setCommentArray(commentList => [...commentList, comment]);
       setComment('');
     }
+  };
+  const remove = e => {
+    remove(handleClick(e));
   };
 
   return (

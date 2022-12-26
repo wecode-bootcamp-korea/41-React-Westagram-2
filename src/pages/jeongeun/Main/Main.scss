@@ -119,6 +119,7 @@
 
         .commentbox {
           display: flex;
+          justify-content: space-between;
           width: 100%;
           overflow-x: hidden;
 
@@ -127,6 +128,22 @@
             padding-left: 10px;
             text-align: left;
             font-size: 12px;
+
+            .newComment {
+              postion: relative;
+              width: 100%;
+            }
+
+            .removeBtn {
+              position: absolute;
+              right: 10px;
+              align-self: flex-end;
+              margin: 0 10px;
+              color: gray;
+              background-color: white;
+              border: none;
+              font-size: 8px;
+            }
           }
         }
 
