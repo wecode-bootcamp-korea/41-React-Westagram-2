@@ -371,3 +371,20 @@ ul {
 .popuppage {
   display: flex;
 }
+
+.commentBox {
+  position: relative;
+}
+
+.xBox {
+  position: absolute;
+  right: 30px;
+  color: rgb(0, 0, 0, 0.4);
+  border: none;
+}
+
+.heart {
+  position: absolute;
+  right: 10px;
+  border: none;
+}
