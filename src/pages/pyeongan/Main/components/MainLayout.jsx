@@ -1,19 +1,30 @@
-import React from 'react';
+import { React, useState } from 'react';
 import '../Main.scss';
-import { useState } from 'react';
+import MainAddComment from './MainAddComment';
 
 export default function MainLayout() {
-  const [comment, setComment] = useState('');
-
-  const onChange = e => {
-    setComment(e.target.value);
-  };
+  const [commentValue, setCommentValue] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
 
   const addComment = e => {
-    return <li>{e}</li>;
+    if (commentValue.length > 0) {
+      const addArray = [...commentArray];
+      addArray.push(commentValue);
+      setCommentArray(addArray);
+      setCommentValue('');
+    }
   };
-  // {cm.map(item) => <li>{item}</li>}
 
+  const onChange = e => {
+    setCommentValue(e.target.value);
+  };
+
+  const onKeyDown = e => {
+    if (e.keyCode === 13 && commentValue.length > 0) {
+      e.preventDefault();
+      addComment(e);
+    }
+  };
   return (
     <>
       <div className="mainDiv">
@@ -42,7 +53,6 @@ export default function MainLayout() {
                 src="./images/pyeongan/postimg.jpg"
               />
             </div>
-
             <div className="imgUnderBox">
               <div>
                 <div className="likeAndComment fontsize14">
@@ -79,30 +89,28 @@ export default function MainLayout() {
                   </div>
                 </li>
               </ul>
+              <div id="commentBox">
+                {commentArray.map(item => {
+                  return <MainAddComment item={item} />;
+                })}
+              </div>
               <div className="postDate">
                 <p>6 일 전</p>
               </div>
               <div>
-                <ul id="commentBox"></ul>
-              </div>
-              <div className="commentAdd">
-                <input
-                  onChange={onChange}
-                  value={comment}
-                  id="commentjs"
-                  type="text"
-                  name="comment"
-                  placeholder="🔖 댓글 달기..."
-                />
-                <button
-                  id="btn"
-                  onClick={() => {
-                    comment ? addComment(comment) : alert('다시');
-                  }}
-                  type="button"
-                >
-                  게시
-                </button>
+                <form className="commentAdd">
+                  <input
+                    id="commentjs"
+                    placeholder=" 댓글 달기..."
+                    value={commentValue}
+                    type="text"
+                    onChange={onChange}
+                    onKeyDown={onKeyDown}
+                  />
+                  <button id="btn" type="button" onClick={addComment}>
+                    게시
+                  </button>
+                </form>
               </div>
             </div>
           </div>

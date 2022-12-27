@@ -6,19 +6,19 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginP() {
   const navigate = useNavigate();
 
-  const [values, setValues] = useState({
-    userid: '',
-    userpwd: '',
-  });
+  // const [values, setValues] = useState({
+  //   userid: "",
+  //   userpwd: "",
+  // });
+
+  // const onChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setValues({ ...values, [name]: value });
+  // };
 
   const [idValue, setText] = useState('');
 
   const [pwdValue, setText2] = useState('');
-
-  const onChange = e => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
-  };
 
   const onChange1 = e => {
     setText(e.target.value);
@@ -29,12 +29,20 @@ export default function LoginP() {
   };
 
   const clicklink = () => {
-    navigate('/main');
+    navigate('/mainP');
   };
 
   const reset = () => {
     setText('');
     setText2('');
+  };
+  console.log(idValue.indexOf('@'));
+
+  const buttoncompatibility = () => {
+    console.log(idValue.indexOf('@'));
+    idValue.indexOf('@') > -1 && pwdValue.length > 5
+      ? clicklink()
+      : reset() && alert('아이디 및 비밀번호를 확인해주세요.');
   };
 
   return (
@@ -66,20 +74,17 @@ export default function LoginP() {
       <div>
         <button
           className="loginbtn"
+          style={
+            idValue.indexOf('@') > -1 && pwdValue.length > 5
+              ? { backgroundColor: '#2b82cf' }
+              : { backgroundColor: '#b3dbff' }
+          }
+          disabled={
+            idValue.indexOf('@') > -1 && pwdValue.length > 5 ? false : true
+          }
           onClick={() => {
-            idValue && pwdValue
-              ? alert('로그인 성공!')
-              : // ? clicklink()
-                reset && alert('아이디 및 비밀번호를 확인해주세요.');
+            buttoncompatibility();
           }}
-          // onClick={() => {
-          //   if (idValue && pwdValue) {
-          //     clicklink();
-          //   } else {
-          //     reset();
-          //
-          //   }
-          // }}
         >
           로그인
         </button>
