@@ -1,12 +1,11 @@
 import React from 'react';
 
-interface Comments
-
-const Comments = props => {
+const Comments = (props) => {
   console.log(props);
+
   return (
     <>
-      <span>
+      <span className="commentList">
         <strong>{props.id}User</strong>
       </span>
       <span></span>

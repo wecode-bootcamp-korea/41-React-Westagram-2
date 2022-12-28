@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from './Main.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCompass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import Comments from './Comments';
+import Aside from './Aside';
 
 const MainJ = () => {
   const [comment, setComment] = useState('');
-  const saveComment = e => {
+  const saveComment = (e) => {
     setComment(e.target.value);
   };
 
   const [commentArray, setCommentArray] = useState([]);
-  const commentElement = commentArray.map((comment, index) => (
-    <li className="newComment" key={index}>
+  const commentElement = commentArray.map((comment) => (
+    <li className="newComment" key={comment}>
       <Comments id={comment.id} text={comment} />
     </li>
   ));
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
-    setCommentArray(commentList => [...commentList, comment]);
+    setCommentArray((commentList) => [...commentList, comment]);
     setComment('');
   };
 
-  const keyDown = e => {
+  const keyDown = (e) => {
     if (e.key === 'Enter') {
-      setCommentArray(commentList => [...commentList, comment]);
+      setCommentArray((commentList) => [...commentList, comment]);
       setComment('');
     }
   };
-  const remove = e => {
-    remove(handleClick(e));
-  };
+
+  const [feeds, setFeeds] = useState([]);
+
+  useEffect(() => {
+    fetch('data/feedData.json')
+      .then((result) => result.json())
+      .then((feeds) => setFeeds(feeds));
+  }, []);
 
   return (
     <div className="content">
@@ -58,43 +64,51 @@ const MainJ = () => {
       </nav>
 
       <main>
-        <div className="feeds">
-          <article>
-            <img src="/images/jeongeun/westa.jpg" alt="feed photo" />
-            <div className="likeBox">
-              <img className="like" src="/images/jeongeun/heart.png" />
-              <img className="speech" src="/images/jeongeun/speech.png" />
+        <div className="feedsBox">
+          {feeds.map((feeds) => (
+            <div className="feeds">
+              <article>
+                <img src={feeds.img} alt="feed photo" />
+                <div className="likeBox">
+                  <img className="like" src="/images/jeongeun/heart.png" />
+                  <img className="speech" src="/images/jeongeun/speech.png" />
+                </div>
+                <div className="commentbox">
+                  <ul className="allcomment">{commentElement} </ul>
+                </div>
+                <div className="inputcomment">
+                  <input
+                    onChange={saveComment}
+                    onKeyDown={keyDown}
+                    value={comment}
+                    className="comment"
+                    type="text"
+                    placeholder="댓글을 입력하세요"
+                  />
+                  <button onClick={handleClick} className="btn" type="button">
+                    게시
+                  </button>
+                </div>
+              </article>
             </div>
-            <div className="commentbox">
-              <ul className="allcomment">{commentElement} </ul>
-            </div>
-            <div className="inputcomment">
-              <input
-                onChange={saveComment}
-                onKeyDown={keyDown}
-                value={comment}
-                className="comment"
-                type="text"
-                placeholder="댓글을 입력하세요"
-              />
-              <button onClick={handleClick} className="btn" type="button">
-                게시
+          ))}
+        </div>
+        <div className="right">
+          <div className="main-right">
+            <div className="userProfile">
+              <img src="/images/jeongeun/cat.jpg" />
+              <span> username</span>
+              <button className="followButton" type="button">
+                팔로우
               </button>
             </div>
-          </article>
-        </div>
-        <div className="main-right">
-          <div className="userProfile">
-            <img src="/images/jeongeun/cat.jpg" />
-            <span> username</span>
-            <button className="followButton" type="button">
-              팔로우
-            </button>
+            <div className="userProfile2"></div>
           </div>
-          <div className="userProfile2"></div>
+          <Aside />
         </div>
       </main>
     </div>
   );
 };
+
 export default MainJ;
