@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { data } from './data';
 
 function Aside() {
   return (
@@ -159,9 +160,20 @@ function Aside() {
             </div>
           </div>
         </div>
+        <div className="Aside">
+          <span>
+            {data.map((value, key) => (
+              <AsideBottom value={value} key={key} />
+            ))}
+          </span>
+        </div>
       </aside>
     </>
   );
 }
 
 export default Aside;
+
+const AsideBottom = ({ value }) => {
+  return <span>{value}</span>;
+};

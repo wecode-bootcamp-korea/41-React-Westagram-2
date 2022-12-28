@@ -17,9 +17,13 @@
     "react/jsx-curly-brace-presence": "warn", // jsx 내 불필요한 중괄호 금지
     "prettier/prettier": [
       "error",
-      {
-        "endOfLine": "auto"
-      }
+      {   
+        "extends": ["react-app", "prettier"],   
+        "plugins": ["prettier"],   
+        "rules": {     
+          "prettier/prettier": ["error", { "endOfLine": "auto" }]   
+        }
+      } 
     ]
   }
 }
