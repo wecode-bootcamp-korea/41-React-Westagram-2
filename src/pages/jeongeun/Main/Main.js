@@ -3,43 +3,11 @@ import Style from './Main.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCompass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
-import Comments from './Comments';
+
 import Aside from './Aside';
+import Feeds from './Feeds';
 
 const MainJ = () => {
-  const [comment, setComment] = useState('');
-  const saveComment = (e) => {
-    setComment(e.target.value);
-  };
-
-  const [commentArray, setCommentArray] = useState([]);
-  const commentElement = commentArray.map((comment) => (
-    <li className="newComment" key={comment}>
-      <Comments id={comment.id} text={comment} />
-    </li>
-  ));
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setCommentArray((commentList) => [...commentList, comment]);
-    setComment('');
-  };
-
-  const keyDown = (e) => {
-    if (e.key === 'Enter') {
-      setCommentArray((commentList) => [...commentList, comment]);
-      setComment('');
-    }
-  };
-
-  const [feeds, setFeeds] = useState([]);
-
-  useEffect(() => {
-    fetch('data/feedData.json')
-      .then((result) => result.json())
-      .then((feeds) => setFeeds(feeds));
-  }, []);
-
   return (
     <div className="content">
       <nav>
@@ -64,35 +32,7 @@ const MainJ = () => {
       </nav>
 
       <main>
-        <div className="feedsBox">
-          {feeds.map((feeds) => (
-            <div className="feeds">
-              <article>
-                <img src={feeds.img} alt="feed photo" />
-                <div className="likeBox">
-                  <img className="like" src="/images/jeongeun/heart.png" />
-                  <img className="speech" src="/images/jeongeun/speech.png" />
-                </div>
-                <div className="commentbox">
-                  <ul className="allcomment">{commentElement} </ul>
-                </div>
-                <div className="inputcomment">
-                  <input
-                    onChange={saveComment}
-                    onKeyDown={keyDown}
-                    value={comment}
-                    className="comment"
-                    type="text"
-                    placeholder="댓글을 입력하세요"
-                  />
-                  <button onClick={handleClick} className="btn" type="button">
-                    게시
-                  </button>
-                </div>
-              </article>
-            </div>
-          ))}
-        </div>
+        <Feeds />
         <div className="right">
           <div className="main-right">
             <div className="userProfile">
