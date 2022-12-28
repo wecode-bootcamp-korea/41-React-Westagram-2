@@ -1,5 +1,5 @@
 team 2 초기 세팅 완료 -- 17:00
-
+레포에 푸쉬
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
