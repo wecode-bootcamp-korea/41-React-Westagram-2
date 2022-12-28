@@ -150,7 +150,7 @@ function Aside() {
                     <strong>EeEeEe</strong>
                   </div>
                   <div className="follow_text">
-                    <strong>FfFfFf님 외 4444 ...</strong>
+                    <strong>FfFfFf님 외 444 ...</strong>
                   </div>
                 </div>
                 <div className="follow">
