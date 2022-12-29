@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import '../Main.scss';
 import MainAddComment from './MainAddComment';
 
-export default function MainLayout() {
+export default function MainLayout({ key, item }) {
   const [commentValue, setCommentValue] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
@@ -25,6 +25,11 @@ export default function MainLayout() {
       addComment(e);
     }
   };
+
+  // const onDelete = targetid => {
+  //   const newcomment = commentArray.filter(item => item.id !== targetid);
+  //   setCommentArray(newcomment);
+  // };
   return (
     <>
       <div className="mainDiv">
@@ -47,11 +52,7 @@ export default function MainLayout() {
               </div>
             </div>
             <div className="userPostImgDiv">
-              <img
-                id="userPostImg"
-                alt="postImg"
-                src="./images/pyeongan/postimg.jpg"
-              />
+              <img id="userPostImg" alt="postImg" src={item.src} />
             </div>
             <div className="imgUnderBox">
               <div>
@@ -63,6 +64,9 @@ export default function MainLayout() {
                       id="iconpadding"
                       className="fa-solid fa-arrow-up-from-bracket"
                     ></i>
+                  </span>
+                  <span className="bookmark">
+                    <i class="fa-regular fa-bookmark"></i>
                   </span>
                 </div>
               </div>
@@ -79,20 +83,32 @@ export default function MainLayout() {
                 <li>
                   <div className="pincomment">
                     <span>wecode123 : </span>
-                    <span>와우!</span>
+                    <span>와우!</span>{' '}
+                    <button className="xBox">
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                    <button className="heart">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
                   </div>
                 </li>
                 <li>
                   <div className="pincomment">
                     <span>321edocew : </span>
                     <span>!우와</span>
+                    <button className="xBox">
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                    <button className="heart">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
                   </div>
                 </li>
               </ul>
               <div id="commentBox">
-                {commentArray.map(item => {
-                  return <MainAddComment item={item} />;
-                })}
+                {commentArray.map((item, idx) => (
+                  <MainAddComment id={idx} item={item} />
+                ))}
               </div>
               <div className="postDate">
                 <p>6 일 전</p>

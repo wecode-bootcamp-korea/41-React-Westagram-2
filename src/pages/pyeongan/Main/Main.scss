@@ -5,9 +5,11 @@ body {
   padding-top: 60px;
 }
 .backDiv {
-  width: 100%;
-  height: 5px;
   background-color: rgb(0, 0, 0, 0.03);
+}
+
+p {
+  margin: 10px 0;
 }
 
 .headerLine {
@@ -35,15 +37,13 @@ body {
 }
 
 .divFeed {
-  position: relative;
   width: 600px;
-  padding: 100px 0;
-  margin: 30px 32px 0 0;
+  margin: 0 32px 0 0;
 }
 
 .divMainRight {
   position: relative;
-  margin-top: 30px;
+  margin-top: 105px;
   width: 350px;
   height: 150vh;
 }
@@ -55,14 +55,6 @@ body {
   border-radius: 8px;
   width: 350px;
   height: 100px;
-}
-
-.storyBox {
-  border: 1px solid $rgb219;
-  border-radius: 8px;
-  width: 350px;
-  height: 250px;
-  top: 100px;
 }
 
 .findFriend {
@@ -87,9 +79,8 @@ body {
 }
 
 .post {
-  position: absolute;
+  margin-top: -20px;
   width: 100%;
-  top: 0;
   border: 1px solid $rgb219;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -104,6 +95,7 @@ body {
 #userPostImg {
   margin: 0;
   width: 100%;
+  height: 700px;
 }
 
 .fontsize14 {
@@ -177,7 +169,7 @@ body {
   top: 2px;
   font-weight: bold;
   font-size: 20px;
-  padding-right: 3px;
+  margin-right: 5px;
 }
 
 .headerRightComposition img {
@@ -197,9 +189,11 @@ body {
 
 .likeNum {
   font-weight: bold;
+  margin: 8px 0;
 }
 
 .userComment {
+  margin: 8px 0;
   font-weight: bold;
 }
 
@@ -208,7 +202,9 @@ body {
 }
 
 .postDate {
+  width: 583px;
   font-size: 12px;
+  margin: 8px 0;
   color: rgb(0, 0, 0, 0.6);
 }
 
@@ -372,10 +368,6 @@ ul {
   display: flex;
 }
 
-.commentBox {
-  position: relative;
-}
-
 .xBox {
   position: absolute;
   right: 30px;
@@ -387,4 +379,81 @@ ul {
   position: absolute;
   right: 10px;
   border: none;
+}
+
+.bookmark {
+  position: relative;
+  top: 8px;
+}
+.addcomment {
+  position: relative;
+  margin: 8px 0;
+}
+
+.heart {
+  background-color: rgb(250, 250, 250);
+}
+
+.xBox {
+  background-color: rgb(250, 250, 250);
+}
+
+.cpn {
+  font-size: 12px;
+  color: rgb(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+.storyBox {
+  border: 1px solid $rgb219;
+  border-radius: 8px;
+  width: 350px;
+}
+.story {
+  position: relative;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.storyname {
+  position: absolute;
+  color: rgb(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: 10px;
+  bottom: 10px;
+  left: 65px;
+}
+
+.storyimage {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  padding: 0 0 0 13px;
+}
+
+.storyuserid {
+  position: absolute;
+  left: 65px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.add {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.4);
+}
+
+#btn {
+  background-color: rgb(250, 250, 250);
+}
+
+#commentjs {
+  background-color: rgb(250, 250, 250);
+}
+
+.mainDiv {
+  margin-top: 100px;
 }

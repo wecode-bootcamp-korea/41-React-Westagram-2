@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "./images/pyeongan/cat1.jpg",
+    "name": "고양이",
+    "userid": "cacacaca"
+  },
+  {
+    "id": 2,
+    "image": "./images/pyeongan/cat2.jpg",
+    "name": "개구리",
+    "userid": "prprprpr"
+  },
+  {
+    "id": 3,
+    "image": "./images/pyeongan/cat3.jpg",
+    "name": "박쥐",
+    "userid": "babababa"
+  },
+  {
+    "id": 4,
+    "image": "./images/pyeongan/cat4.png",
+    "name": "돌핀",
+    "userid": "dodododo"
+  }
+]
