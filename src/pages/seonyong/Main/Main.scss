@@ -61,6 +61,7 @@ main {
 }
 
 .feeds {
+  flex-direction: column;
   margin-left: 250px;
   margin-right: 100px;
   width: 600px;
@@ -187,7 +188,7 @@ main {
   justify-content: space-between;
   margin: 0px 0px 5px 5px;
   width: 100%;
-  height: 300px;
+  height: 100px;
 }
 
 .f_t_b1 {
@@ -226,13 +227,13 @@ main {
   margin: -2px -1px -1px -1px;
 }
 
-form {
-  font-size: 15px;
-  padding: 6px;
-  border: 0 solid black;
-  float: left;
-  color: lightgray;
-}
+// form {
+//   font-size: 15px;
+//   padding: 6px;
+//   border: 0 solid black;
+//   float: left;
+//   color: lightgray;
+// }
 
 .commentBtn {
   width: 60px;

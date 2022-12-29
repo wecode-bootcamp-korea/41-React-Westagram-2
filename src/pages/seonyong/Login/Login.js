@@ -26,6 +26,41 @@ export default function LoginS() {
     ? (Color = { backgroundColor: 'black' })
     : (Color = { backgroundColor: 'red' });
 
+  const onClickSignUp = () => {
+    fetch('http://10.58.52.199:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  };
+
+  const onClickSignEnter = () => {
+    fetch('http://10.58.52.199:3000/signIn', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        localStorage.setItem('accessToken', data.accessToken);
+      });
+  };
+
+  console.log(localStorage.getItem('accessToken'));
+
   return (
     <section className="login_contents">
       <div className="contents_box">
@@ -46,9 +81,15 @@ export default function LoginS() {
           <button
             className="login_button"
             style={Color}
-            onClick={() => {
-              navigate('../MainS');
-            }}
+            onClick={onClickSignUp}
+            disabled={blocked}
+          >
+            회원가입
+          </button>
+          <button
+            className="login_button"
+            style={Color}
+            onClick={onClickSignEnter}
             disabled={blocked}
           >
             로그인

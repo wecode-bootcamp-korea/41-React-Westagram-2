@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "profile_text": "AaBbCc",
+    "profile_img": "images/seonyong/profile_com.png",
+    "user_place": "위코드 - 에이비씨",
+    "feed_img": "images/seonyong/feed.png",
+    "r_l_pic": "images/seonyong/right_profile1.png",
+    "r_l_text1": "DdEeFf",
+    "r_l_text2": "님",
+    "r_l_text3": "외 4명",
+    "r_l_text4": "이 좋아합니다"
+  },
+
+  {
+    "id": "2",
+    "profile_text": "EeFfGg",
+    "profile_img": "images/seonyong/profile_img1.jpg",
+    "user_place": "위코드 - 이에프쥐",
+    "feed_img": "images/seonyong/feed1.jpg",
+    "r_l_pic": "images/seonyong/profile_pic.png",
+    "r_l_text1": "KkLlMm",
+    "r_l_text2": "님",
+    "r_l_text3": "외 44명",
+    "r_l_text4": "이 좋아합니다"
+  },
+
+  {
+    "id": "3",
+    "profile_text": "HhIiJj",
+    "profile_img": "images/seonyong/profile_img2.jpg",
+    "user_place": "위코드 - 에이치아이제이",
+    "feed_img": "images/seonyong/feed2.jpg",
+    "r_l_pic": "images/seonyong/right_profile2.png",
+    "r_l_text1": "NnOoPp",
+    "r_l_text2": "님",
+    "r_l_text3": "외 444명",
+    "r_l_text4": "이 좋아합니다"
+  }
+]

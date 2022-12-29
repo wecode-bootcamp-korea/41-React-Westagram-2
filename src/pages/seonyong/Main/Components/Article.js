@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import Comment from './Comment';
 
-export default function Article(props) {
+export default function Article({ userFeed, key }) {
   const [commentValue, setCommentValue] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
   const commentInput = event => {
     setCommentValue(event.target.value);
-    console.log(event.target.value);
+    //console.log(event.target.value);
   };
 
   const feedComments = [...commentArray];
   const onEnter = event => {
     if (event.key === 'Enter' && commentValue.length > 0) {
       feedComments.push(commentValue);
-      console.log(feedComments);
+      //console.log(feedComments);
       setCommentArray(feedComments);
-      console.log(setCommentArray);
+      //console.log(setCommentArray);
       setCommentValue('');
     }
   };
@@ -24,9 +24,9 @@ export default function Article(props) {
   const clickBtn = event => {
     if (commentValue.length > 0) {
       feedComments.push(commentValue);
-      console.log(feedComments);
+      //console.log(feedComments);
       setCommentArray(feedComments);
-      console.log(setCommentArray);
+      //console.log(setCommentArray);
       setCommentValue('');
     }
   };
@@ -37,12 +37,12 @@ export default function Article(props) {
         <div className="a_t_b1">
           <img
             className="profile_img"
-            src="images/seonyong/profile_pic.png"
+            src={userFeed.profile_img}
             alt="profile_img"
           />
           <div className="profile_text">
-            <div className="profile_name1">AaBbCc</div>
-            <div className="profile_name2">위코드 - 에이비씨</div>
+            <div className="profile_name1">{userFeed.profile_text}</div>
+            <div className="profile_name2">{userFeed.user_place}</div>
           </div>
         </div>
         <div className="a_t_b2">
@@ -50,7 +50,7 @@ export default function Article(props) {
         </div>
       </div>
       <div className="feed_box">
-        <img className="feed_img" src="images/seonyong/feed.png" alt="" />
+        <img className="feed_img" src={userFeed.feed_img} alt="" />
       </div>
       <div className="react_icon_box">
         <div className="r_i_b1">
@@ -79,16 +79,12 @@ export default function Article(props) {
         </div>
       </div>
       <div className="react_like_box">
-        <img
-          className="r_l_pic"
-          src="images/seonyong/profile_com.png"
-          alt="like_profile"
-        />
-        <div className="r_l_text1">DdEeFf</div>
-        <div className="r_l_text2">님</div>
+        <img className="r_l_pic" src={userFeed.r_l_pic} alt="like_profile" />
+        <div className="r_l_text1">{userFeed.r_l_text1}</div>
+        <div className="r_l_text2">{userFeed.r_l_text2}</div>
         &nbsp;
-        <div className="r_l_text3">외 44명</div>
-        <div className="r_l_text4">이 좋아합니다</div>
+        <div className="r_l_text3">{userFeed.r_l_text3}</div>
+        <div className="r_l_text4">{userFeed.r_l_text4}</div>
       </div>
       <div className="feed_text_box">
         <ul className="f_t_b1">
